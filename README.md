@@ -16,32 +16,48 @@ Before running this project, ensure your Raspberry Pi has the following installe
 - Python 3.10+ or Node.js (v18+)
 - Git
 - Update and Upgrade system and install required librarries :
+   - تحديث النظام أولاً
+
   ```bash
-    # تحديث النظام أولاً
-sudo apt update && sudo apt upgrade -y
-
-# تثبيت الحزم اللازمة للتعامل مع الصوت والمايكروفون (ALSA و PulseAudio)
-sudo apt install alsa-utils pulseaudio portaudio19-dev libasound2-dev -y
-
-# تثبيت الحزم اللازمة لتشغيل ملفات MP3 ومكتبة Pygame في بيئة بدون واجهة رسومية
-sudo apt install libsdl2-mixer-2.0-0 ffmpeg -y
-
+    sudo apt update && sudo apt upgrade -y
   ```
+
+
+- تثبيت الحزم اللازمة للتعامل مع الصوت والمايكروفون (ALSA و PulseAudio)
+
+   ```bash
+       sudo apt install alsa-utils pulseaudio portaudio19-dev libasound2-dev -y
+   ```
+
+- تثبيت الحزم اللازمة لتشغيل ملفات MP3 ومكتبة Pygame في بيئة بدون واجهة رسومية
+  ```bash
+      sudo apt install libsdl2-mixer-2.0-0 ffmpeg -y
+  ```
+
+
 - تثبيت مكتبات بايثون
 تأكد من تثبيت المكتبات داخل النظام (يفضل استخدام بيئة افتراضية لـ Python 3):
 
   ```bash
     pip3 install google-generativeai speechRecognition gTTS pygame pyaudio
   ```
+    ```bash
+    sudo apt install python3-pip python3-pyaudio portaudio19-dev libasound2-dev flac -y
+
+  ```
+
+ -   تشغيل خادم الصوت (في حال واجهت مشكلة في خروج الصوت):
+  ```bash
+   pulseaudio --start
+  ```
+
+
+  
 - to edit config txt :
   ```bash
     sudo nano /boot/firmware/config.txt
   ```
-  ```bash
-    sudo apt install python3-pip python3-pyaudio portaudio19-dev libasound2-dev flac -y
 
-    pip3 install speechrecognition google-generativeai gTTS pygame --break-system-packages
-  ```
 
 - To check mic :
   ```bash
