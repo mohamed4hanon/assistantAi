@@ -45,7 +45,28 @@ Before running this project, ensure your Raspberry Pi has the following installe
   ```
 - You should get AI Key :
   GEMINI_API_KEY = "ضع_مفتاح_جوجل_هنا"
-`
+  
+- Option A: Download a WAV file (Recommended because it works instantly without extra software):
+  ```bash
+     wget -O test.wav https://github.com2
+  ```
+- If playing the WAV file:Run the native aplay command:
+  ```bash
+     aplay test.wav
+  ```
+ - Option B: Download an MP3 file:
+  ```bash
+     wget -O test.mp3 https://github.com/rafaelreis-hotmart/Audio-Sample-files/raw/master/sample.mp3
+  ```   
+- If playing the MP3 file:You will need to install a command-line player first. Use mpg123:
+  ```bash
+    sudo apt update && sudo apt install mpg123 -y
+    mpg123 test.mp3
+  ```
+
+
+
+
 
 ### Installation
 1. Clone this repository to your Raspberry Pi:
