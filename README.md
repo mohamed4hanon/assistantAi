@@ -15,9 +15,23 @@ Before running this project, ensure your Raspberry Pi has the following installe
 - Raspberry Pi lite OS (64-bit recommended)
 - Python 3.10+ or Node.js (v18+)
 - Git
-- Update and Upgrade system :
+- Update and Upgrade system and install required librarries :
   ```bash
-    sudo apt update && sudo apt upgrade -y
+    # تحديث النظام أولاً
+sudo apt update && sudo apt upgrade -y
+
+# تثبيت الحزم اللازمة للتعامل مع الصوت والمايكروفون (ALSA و PulseAudio)
+sudo apt install alsa-utils pulseaudio portaudio19-dev libasound2-dev -y
+
+# تثبيت الحزم اللازمة لتشغيل ملفات MP3 ومكتبة Pygame في بيئة بدون واجهة رسومية
+sudo apt install libsdl2-mixer-2.0-0 ffmpeg -y
+
+  ```
+- تثبيت مكتبات بايثون
+تأكد من تثبيت المكتبات داخل النظام (يفضل استخدام بيئة افتراضية لـ Python 3):
+
+  ```bash
+    pip3 install google-generativeai speechRecognition gTTS pygame pyaudio
   ```
 - to edit config txt :
   ```bash
