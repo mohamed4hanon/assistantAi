@@ -68,7 +68,7 @@ npm start
 ```
 *Or if using Python:*
 ```bash
-python main.py
+python assistant.py
 ```
 Open your browser and navigate to `http://localhost:3000` (or your Pi's local IP address) to access the dashboard.
 
