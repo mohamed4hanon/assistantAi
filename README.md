@@ -12,7 +12,7 @@ Welcome to **assistantAi**, a dedicated control panel and management system desi
 
 ### Prerequisites
 Before running this project, ensure your Raspberry Pi has the following installed:
-- Raspberry Pi OS (64-bit recommended)
+- Raspberry Pi lite OS (64-bit recommended)
 - Python 3.10+ or Node.js (v18+)
 - Git
 
