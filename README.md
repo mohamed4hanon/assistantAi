@@ -94,7 +94,35 @@ Before running this project, ensure your Raspberry Pi has the following installe
     mpg123 test.mp3
   ```
 
+### HOW TO ADD I2S MIC
+الخطوة 1: تعريف مايكروفون I2S داخل نظام الراسبيري باي
+افتح ملف إعدادات النظام عبر الأمر التالي:
 
+  ```bash
+sudo nano /boot/firmware/config.txt
+  ```
+(ملاحظة: إذا كنت تستخدم نظاماً قديماً جداً قد يكون المسار sudo nano /boot/config.txt)
+
+انزل إلى أسفل الملف وأضف الأسطر التالية لتفعيل واجهة I2S والتعريف الخاص بالمايكروفون:
+
+  ```bash
+dtparam=i2s=on
+dtoverlay=googlevoicehat-soundcard
+  ```
+(ملاحظة: الـ overlay المسمى googlevoicehat-soundcard هو أسهل وأسرع تعريف مدمج في النظام لتشغيل مايكروفونات I2S العامة مثل INMP441 دون الحاجة لتجميع تعريفات معقدة).
+
+احفظ الملف (Ctrl+O ثم Enter) واخرج (Ctrl+X).
+
+قم بإعادة تشغيل الراسبيري باي لتفعيل التغييرات:
+  ```bash
+sudo reboot
+  ```
+بعد إعادة التشغيل، تأكد من أن النظام رأى المايكروفون عبر الأمر:
+
+  ```bash
+arecord -l
+  ```
+ستلاحظ ظهور جهاز تسجيل جديد باسم (snd_rpi_googlevoicehat أو ما شابه).
 
 
 
