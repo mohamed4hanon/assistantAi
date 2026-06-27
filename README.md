@@ -15,11 +15,42 @@ Before running this project, ensure your Raspberry Pi has the following installe
 - Raspberry Pi lite OS (64-bit recommended)
 - Python 3.10+ or Node.js (v18+)
 - Git
+- Update and Upgrade system :
+  ```bash
+    sudo apt update && sudo apt upgrade -y
+  ```
+- to edit config txt :
+  ```bash
+    sudo nano /boot/firmware/config.txt
+  ```
+  ```bash
+    sudo apt install python3-pip python3-pyaudio portaudio19-dev libasound2-dev flac -y
+
+    pip3 install speechrecognition google-generativeai gTTS pygame --break-system-packages
+  ```
+
+- To check mic :
+  ```bash
+    arecord -l
+  ```
+
+- TO chech Speakers :
+  ```bash
+   aplay -l
+  ```
+
+- TO test headphone :
+  ```bash
+   speaker-test -t sine -f 440 -c 2
+  ```
+- You should get AI Key :
+  GEMINI_API_KEY = "ضع_مفتاح_جوجل_هنا"
+`
 
 ### Installation
 1. Clone this repository to your Raspberry Pi:
    ```bash
-   git clone https://github.com
+   git clone https://github.com/mohamed4hanon/assistantAi.git
    ```
 2. Navigate into the project directory:
    ```bash
